@@ -7,19 +7,26 @@ export const BannerContainer = styled.div`
 
 export const BannerLeft = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  width: 50%;
+  width: 70%;
 `;
 export const BannerRight = styled.div`
   display: flex;
-  justify-content: center;
-  width: 50%;
+  justify-content: flex-end;
+  width: 30%;
+  img {
+    width: 50%;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+    background-color: #fcfcfc;
+    padding: 1rem;
+  }
 `;
-export const BannerImg = styled.img`
-  width: 40%;
-  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
-  background-color: #fcfcfc;
+
+export const BannerIcons = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const BannerIcon = styled.div`
   padding: 1rem;
 `;

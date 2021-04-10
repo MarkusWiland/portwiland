@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const P = styled.p`
-  color: ${({ color }) => (color ? color : '#f30f02')};
+  color: ${({ color }) => (color ? color : '#374151')};
   font-size: ${({ size }) => {
     switch (size) {
       case 'medium':
@@ -11,12 +11,17 @@ export const P = styled.p`
       case 'xSmall':
         return '0.875rem';
       default:
-        return '1.225rem';
+        return '1rem';
     }
   }};
+  line-height: 1.75;
+  display: ${({ pos }) => (pos ? pos : '')};
 `;
 
 export const H1 = styled.h1`
+  text-decoration: ${({ underline }) => {
+    underline ? 'underline' : '';
+  }};
   font-size: ${({ size }) => {
     switch (size) {
       case 'medium':
@@ -29,10 +34,9 @@ export const H1 = styled.h1`
         return '2.225rem';
     }
   }};
-  background: linear-gradient(
-    ${({ first, second }) =>
-      first && second ? `${first}, ${second}` : '#3f3f3f, #eee'}
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  padding-bottom: 1rem;
+  span {
+    color: blue;
+  }
+  font-family: 'New Tegomin', serif;
 `;

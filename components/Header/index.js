@@ -1,43 +1,60 @@
-import {
-  Header,
-  NavContainer,
-  NavLogo,
-  NavImg,
-  Nav,
-  NavUl,
-  NavLi,
-} from '@/elements/index';
+import { Header, NavContainer, NavLogo, Nav } from '@/elements/index';
 import { useEffect, useState } from 'react';
+import Brightness2Icon from '@material-ui/icons/Brightness2';
+import WbSunnyIcon from '@material-ui/icons/WbSunny';
+import Link from 'next/link';
 export default function index() {
-  const [isScrolledAway, setIsScrolledAway] = useState(true);
-  // console.log(isScrolledAway);
-  // useEffect(() => {
-  //   if (typeof window !== 'undefined') {
-  //     window.addEventListener('scroll', changeNavbar);
-  //   }
-  //   return () => window.removeEventListener('scroll', changeNavbar);
-  // }, []);
-  // function changeNavbar() {
-  //   if (window.scrollY > 80) {
-  //     setIsScrolledAway(true);
-  //   } else {
-  //     setIsScrolledAway(false);
-  //   }
-  // }
+  const [isScrolledAway, setIsScrolledAway] = useState(false);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', changeNavbar);
+    }
+    return () => window.removeEventListener('scroll', changeNavbar);
+  }, []);
+  function changeNavbar() {
+    if (window.scrollY >= 80) {
+      setIsScrolledAway(true);
+    } else {
+      setIsScrolledAway(false);
+    }
+  }
   return (
     <Header>
       <NavContainer isScrolledAway={isScrolledAway}>
-        <NavLogo>
-          <NavImg src="/markuswiland.jpg" alt="markuswiland" />
+        <NavLogo isScrolledAway={isScrolledAway}>
+          <span>
+            {true ? <Brightness2Icon fontSize="small" /> : <WbSunnyIcon />}
+          </span>
+          <h1>Markus Wiland</h1>
         </NavLogo>
         <Nav>
-          <NavUl>
-            <NavLi>Home</NavLi>
-            <NavLi>Home</NavLi>
-            <NavLi>Home</NavLi>
-            <NavLi>Home</NavLi>
-            <NavLi>Home</NavLi>
-          </NavUl>
+          <ul>
+            <li>
+              <Link href="/">
+                <a>Hem</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog">
+                <a>Blogg</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/portfolio">
+                <a>Portfolio</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/about">
+                <a>Om</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact">
+                <a>Kontakt</a>
+              </Link>
+            </li>
+          </ul>
         </Nav>
       </NavContainer>
     </Header>

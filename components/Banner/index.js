@@ -2,21 +2,42 @@ import {
   BannerContainer,
   BannerLeft,
   BannerRight,
-  BannerImg,
+  BannerIcons,
+  BannerIcon,
   H1,
+  P,
 } from '@/elements/index';
+import { FiInstagram } from 'react-icons/fi';
+import { FaTwitter, FaLinkedin } from 'react-icons/fa';
 export default function index() {
   return (
-    <BannerContainer>
-      <BannerLeft>
-        <H1 background={('#000', '#f3fd')}>Markus Wiland</H1>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nesciunt
-        aliquid atque tenetur? Eligendi rerum omnis sit quod, eos vel commodi
-        debitis atque sed fugiat, quidem sapiente iusto sunt reprehenderit!
-      </BannerLeft>
-      <BannerRight>
-        <BannerImg src="/markuswiland.jpg" alt="Markus Wiland" />
-      </BannerRight>
-    </BannerContainer>
+    <>
+      <BannerContainer>
+        <BannerLeft>
+          <H1>Markus Wiland</H1>
+          <P>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
+            consequuntur sapiente rem harum vel, nihil asperiores atque iusto
+            officiis cum molestias ducimus, odit natus. Sit autem alias quia est
+            cumque.
+          </P>
+          <BannerIcons>
+            <BannerIcon>
+              <FiInstagram />
+            </BannerIcon>
+            <BannerIcon>
+              <FaTwitter />
+            </BannerIcon>
+            <BannerIcon>
+              <FaLinkedin />
+            </BannerIcon>
+          </BannerIcons>
+        </BannerLeft>
+
+        <BannerRight>
+          <img src="/markuswiland.jpg" alt="Markus Wiland" />
+        </BannerRight>
+      </BannerContainer>
+    </>
   );
 }

@@ -1,10 +1,13 @@
 import Head from 'next/head';
+import { client } from '@/utils/client';
 // Importing components
 import Layout from '@/components/Layout';
 import Banner from '@/components/Banner';
+import Posts from '@/components/Posts';
 // Importing styling elements
-import { P } from '@/elements/index';
-export default function Home() {
+import { P, Section, H1 } from '@/elements/index';
+export default function Home({ posts }) {
+  console.log(posts);
   return (
     <Layout>
       <Head>
@@ -13,15 +16,26 @@ export default function Home() {
       </Head>
 
       <main>
-        <Banner />
-        <P size="small">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit
-          dolor reprehenderit odit dicta provident ea rerum neque omnis
-          veritatis atque aut, exercitationem debitis, harum ad dolore veniam.
-          Culpa, maxime similique!
-        </P>
-        <Banner /> <Banner />
+        <Section>
+          <Banner />
+        </Section>
+        <Section>
+          <H1 underline>
+            Tre senaste <span>blogginlägg</span>
+          </H1>
+          <Posts posts={posts} />
+        </Section>
       </main>
     </Layout>
   );
+}
+export async function getStaticProps() {
+  const data = await client.getEntries({
+    content_type: 'posts',
+  });
+  return {
+    props: {
+      posts: data.items,
+    },
+  };
 }

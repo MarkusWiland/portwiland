@@ -8,9 +8,8 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
-  max-width: 1100px;
+  max-width: 1000px;
   width: 100%;
-  padding-top: 1rem;
   margin: 0 auto;
   flex: 1;
 `;
