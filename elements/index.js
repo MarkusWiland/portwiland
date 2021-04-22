@@ -1,3 +1,4 @@
+export * from './AboutElements';
 export * from './BannerElements';
 export * from './BlogElements';
 export * from './ContainerElements';
@@ -6,3 +7,4 @@ export * from './GlobalElements';
 export * from './HeaderElements';
 export * from './TypographyElements';
 export * from './SectionElements';
+export * from './GalleryElements';

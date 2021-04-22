@@ -35,8 +35,6 @@ export const H1 = styled.h1`
     }
   }};
   padding-bottom: 1rem;
-  span {
-    color: blue;
-  }
+
   font-family: 'New Tegomin', serif;
 `;

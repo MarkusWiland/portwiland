@@ -54,6 +54,11 @@ export default function index() {
                 <a>Kontakt</a>
               </Link>
             </li>
+            <li>
+              <Link href="/gallery">
+                <a>Gallery</a>
+              </Link>
+            </li>
           </ul>
         </Nav>
       </NavContainer>

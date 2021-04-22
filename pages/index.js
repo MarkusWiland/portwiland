@@ -7,7 +7,6 @@ import Posts from '@/components/Posts';
 // Importing styling elements
 import { P, Section, H1 } from '@/elements/index';
 export default function Home({ posts }) {
-  console.log(posts);
   return (
     <Layout>
       <Head>
@@ -20,7 +19,7 @@ export default function Home({ posts }) {
           <Banner />
         </Section>
         <Section>
-          <H1 underline>
+          <H1>
             Tre senaste <span>blogginlägg</span>
           </H1>
           <Posts posts={posts} />

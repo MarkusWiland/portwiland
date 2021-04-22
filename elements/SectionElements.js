@@ -86,19 +86,18 @@ export const Article = styled.div`
   .article-imgBox img {
     max-width: 100%;
     width: 100%;
-    z-index: -1;
-    height: 500px;
+    max-height: 500px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 4px;
   }
   .article-imgBox::before {
     content: '';
     position: absolute;
     top: 0;
-    bottom: 0;
+    bottom: 3px;
     left: 0;
     right: 0;
-    box-shadow: inset 0 4rem 3rem rgba(0, 0, 0, 0.7);
+    box-shadow: inset 0 0.3rem 5rem 0.5rem rgba(0, 0, 0, 0.7);
   }
   .article-content {
     position: relative;

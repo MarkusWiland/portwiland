@@ -23,13 +23,13 @@ export default function index() {
           </P>
           <BannerIcons>
             <BannerIcon>
-              <FiInstagram />
+              <FiInstagram fontSize={30} />
             </BannerIcon>
             <BannerIcon>
-              <FaTwitter />
+              <FaTwitter fontSize={30} />
             </BannerIcon>
             <BannerIcon>
-              <FaLinkedin />
+              <FaLinkedin fontSize={30} />
             </BannerIcon>
           </BannerIcons>
         </BannerLeft>
